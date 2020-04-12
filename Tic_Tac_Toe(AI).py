@@ -134,7 +134,6 @@ def AI_Move(player, max_depth, gameboard):
                         best_score = score
 
         if max_depth == 9:
-            print(score, gameboard, move)
             bestMove.append((score, move))
 
             score = 0
@@ -158,6 +157,8 @@ def chooseIdealMove(gameboard, function):
 # The main program
 def main():
     while True:
+        printBoard(board)
+        playerMove(board)
         if checkBoard(board) == "DRAW":
             print("It's a draw!!!")
             printBoard(board)
@@ -168,8 +169,6 @@ def main():
             printBoard(board)
             break
 
-        printBoard(board)
-        playerMove(board)
         chooseIdealMove(board, AI_Move(-1, 9, board))
 
 
